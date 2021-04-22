@@ -24,7 +24,7 @@ export default function () {
   }
   console.log(allProducts[1]);
   const randomLink = Math.floor(Math.random() * matchesCount)+1;
-  console.log("Random Number is " + randomLink);
+  console.log("Random Number is: " + randomLink);
 
   let productLink = "https://onlineboutique.dev" + "/product/" + allProducts[randomLink];
   let productLinkClick = http.get(productLink);
