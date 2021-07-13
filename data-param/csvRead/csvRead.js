@@ -11,7 +11,7 @@ export let options = {
 };
 
 const csvRead = new SharedArray("credentials", function() {
-    return papaparse.parse(open('./data.csv'), {header: true}).data;
+    return papaparse.parse(open('./data.csv'), {header: true}).data; // returning array
 });
 
 export default function main(){
@@ -26,14 +26,14 @@ export default function main(){
     // console.log(randomCredentials['username']);
     // console.log(randomCredentials['password']);
 
-    var username = csvRead[0]['username'];
-    var password = csvRead[0]['password'];
+    var username = csvRead[Math.floor(Math.random() * csvRead.length)]['username'];
+    var password = csvRead[Math.floor(Math.random() * csvRead.length)]['password'];
 
     // Generate base64 encoded credentials
     var toBeEncoded = username + ':' + password;
     var encodedString = encoding.b64encode(toBeEncoded);
 
-    console.log(encodedString);
+    // console.log(encodedString);
 
     let params = {
         headers : {
@@ -43,6 +43,6 @@ export default function main(){
     };
 
     let response = http.get("http://localhost/login", params);
-    console.log(response.status);
+    console.log(`Logging in using `+ username + ":" + password + ` Status: ` + response.status);
 };
 

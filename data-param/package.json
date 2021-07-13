@@ -1,0 +1,15 @@
+{
+  "name": "data-param",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data-param-demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/k6": "^0.32.2"
+  }
+}
