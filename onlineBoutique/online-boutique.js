@@ -19,9 +19,9 @@ export let options = {
 export default function () {
   let homepage = http.get('https://onlineboutique.dev');
 
-  check(homepage, {
-    'status is 200': (r) => r.status === 200,
-  });
+    check(homepage, {
+      'status is 200': (r) => r.status === 200,
+    });
 
   const homePageResponse  =  homepage.body;
 
