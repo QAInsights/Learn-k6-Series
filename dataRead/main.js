@@ -22,21 +22,21 @@ const csvRead = new SharedArray("credentials", function() {
 let payload = JSON.parse(open('./testdata_v1.json'));
 
 export default function() {
-    var datapcIds = csvRead[Math.floor(Math.random() * csvRead.length)]['pcIds'];
-    var datapatientId = csvRead[Math.floor(Math.random() * csvRead.length)]['patientId'];
+    var dataa = csvRead[Math.floor(Math.random() * csvRead.length)]['a'];
+    var datab = csvRead[Math.floor(Math.random() * csvRead.length)]['b'];
 
-    console.log(datapcIds + '=======' + datapatientId);
+    console.log(dataa + '=======' + datab);
 
     //read json
     console.log("My payload: " + payload);
     let user = payload;
-    
-    console.log(`${user.pcIds}`);
-    console.log(`${user.patientId}`);
-    user.pcIds = datapcIds;
-    user.patientId = datapatientId;
-    console.log(`${user.pcIds}`);
-    console.log(`${user.patientId}`);
+
+    console.log(`${user.a}`);
+    console.log(`${user.b}`);
+    user.a = dataa;
+    user.b = datab;
+    console.log(`${user.a}`);
+    console.log(`${user.b}`);
     console.log(`${user}`);
 
     //replace it with body payload
