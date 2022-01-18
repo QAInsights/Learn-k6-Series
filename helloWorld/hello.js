@@ -9,7 +9,7 @@ export let options = {
 
 // vu script
 export default function () {
-  let res = http.get('http://test.k6.io');
+  let res = http.get('http://18.224.107.23:8081');
   console.log(res.status);
   
   sleep(5);
